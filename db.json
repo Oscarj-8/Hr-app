@@ -1,0 +1,31 @@
+{
+  "employees": [
+    {
+      "id": 1,
+      "Fullname": "Ander Herrera",
+      "email": "Herrera@ander@gmail.com",
+      "phone": " 0934 34 34 34",
+      "address": "Addis Ababa",
+      "hire-date": "2017-01-20",
+      "department": "Computer Science"
+    },
+    {
+      "id": 4,
+      "Fullname": "Hector Herrera",
+      "email": "Hector@ander@gmail.com",
+      "phone": " 0954 43 43 43",
+      "address": "Addis Ababa",
+      "hire-date": "2013-10-20",
+      "department": "Computer Science"
+    },
+    {
+      "id": 3,
+      "Fullname": "Andreas periera",
+      "email": "Herrera@ander@gmail.com",
+      "phone": " 0943 12 45 24",
+      "address": "Addis Ababa",
+      "hire-date": "2020-01-20",
+      "department": "Software Engineering"
+    }
+  ]
+}
