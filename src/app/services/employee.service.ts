@@ -10,7 +10,7 @@ export class EmployeeService {
 
   constructor(private http: HttpClient) {}
 
-  getEmployees(): Observable<Employee> {
-    return this.http.get<Employee>(this.employeeUrl);
+  getEmployees(): Observable<Employee[]> {
+    return this.http.get<Employee[]>(this.employeeUrl);
   }
 }
