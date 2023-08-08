@@ -56,6 +56,13 @@ export class InMemoryDataService implements InMemoryDbService {
         phone: '0932456790',
         department: 'HR',
       },
+      {
+        id: 4,
+        name: 'Noni Madueke',
+        email: 'arnold.jamese@example.com',
+        phone: '0932456790',
+        department: 'HR',
+      },
       // Add more employee objects as needed
     ];
 
@@ -81,12 +88,12 @@ export class InMemoryDataService implements InMemoryDbService {
         amount: 11000,
       },
       {
-        id: 1,
+        id: 2,
         employee_id: 2,
         amount: 13000,
       },
       {
-        id: 1,
+        id: 3,
         employee_id: 3,
         amount: 14000,
       },

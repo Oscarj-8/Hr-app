@@ -1,1 +1,22 @@
-<p>candidate works!</p>
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th>Experience</th>
+      <th>Interview Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let candidate of candidates">
+      <td>{{ candidate.id }}</td>
+      <td>{{ candidate.name }}</td>
+      <td>{{ candidate.email }}</td>
+      <td>{{ candidate.phone }}</td>
+      <td>{{ candidate.experience }}</td>
+      <td>{{ candidate.interviewStatus }}</td>
+    </tr>
+  </tbody>
+</table>

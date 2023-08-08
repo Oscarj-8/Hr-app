@@ -1,20 +1,72 @@
-<table>
-  <thead>
-    <tr>
-      <th>ID</th>
-      <th>Name</th>
-      <th>Email</th>
-      <th>Phone</th>
-      <th>Department</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let employee of employees">
-      <td>{{ employee.id }}</td>
-      <td>{{ employee.name }}</td>
-      <td>{{ employee.email }}</td>
-      <td>{{ employee.phone }}</td>
-      <td>{{ employee.department }}</td>
-    </tr>
-  </tbody>
-</table>
+<div>
+  <h2>Employee List</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Department</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let employee of employees">
+        <td>{{ employee.id }}</td>
+        <td>{{ employee.name }}</td>
+        <td>{{ employee.email }}</td>
+        <td>{{ employee.phone }}</td>
+        <td>{{ employee.department }}</td>
+        <td>
+          <button
+            mat-icon-button
+            color="primary"
+            (click)="selectEmployee(employee)"
+          >
+            <mat-icon>edit</mat-icon>
+          </button>
+          <button
+            mat-icon-button
+            color="warn"
+            (click)="deleteEmployee(employee.id)"
+          >
+            <mat-icon>delete</mat-icon>
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div *ngIf="selectedEmployee">
+  <h2>{{ selectedEmployee.id ? "Edit" : "Add" }} Employee</h2>
+  <form (submit)="saveEmployee(selectedEmployee)">
+    <label for="name">Name:</label>
+    <input
+      type="text"
+      id="name"
+      [(ngModel)]="selectedEmployee.name"
+      name="name"
+    />
+
+    <label for="email">Email:</label>
+    <input
+      type="email"
+      id="email"
+      [(ngModel)]="selectedEmployee.email"
+      name="email"
+    />
+
+    <label for="department">Department:</label>
+    <input
+      type="text"
+      id="department"
+      [(ngModel)]="selectedEmployee.department"
+      name="department"
+    />
+
+    <button type="submit">{{ selectedEmployee.id ? "Update" : "Add" }}</button>
+    <button type="button" (click)="clearSelection()">Cancel</button>
+  </form>
+</div>
