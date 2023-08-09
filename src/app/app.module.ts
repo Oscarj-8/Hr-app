@@ -17,6 +17,7 @@ import { SalaryComponent } from './components/salary/salary.component';
 import { EmployeeFormComponent } from './components/employee-form/employee-form.component';
 import { CommonModule } from '@angular/common';
 import { AddEmployeeButtonComponent } from './components/add-employee-button/add-employee-button.component';
+import { DasgboardComponent } from './shared/dasgboard/dasgboard.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { AddEmployeeButtonComponent } from './components/add-employee-button/add
     SalaryComponent,
     EmployeeFormComponent,
     AddEmployeeButtonComponent,
+    DasgboardComponent,
   ],
   imports: [
     CommonModule,

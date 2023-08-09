@@ -45,38 +45,6 @@ h2 {
   font-size: 1.7em;
 }
 
-/* Fancy table styling */
-.employee-table {
-  width: 100%;
-  background-color: #ffffff;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
-  overflow: hidden; /* Hide table cell borders on hover */
-  transition: box-shadow 0.3s;
-}
-
-.employee-table th,
-.employee-table td {
-  padding: 12px;
-  border: none; /* Remove default cell borders */
-}
-
-.employee-table th {
-  background-color: #f6f6f6;
-  font-weight: bold;
-  text-transform: uppercase;
-}
-
-.employee-table tr:nth-child(even) {
-  background-color: #f9f9f9;
-}
-
-.employee-table tr:hover {
-  background-color: #f0f0f0;
-  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15); /* Add shadow on hover */
-  transition: background-color 0.3s, box-shadow 0.3s;
-}
-
 .employee-edit {
   width: 30em;
   position: fixed;

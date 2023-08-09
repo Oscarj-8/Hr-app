@@ -1,4 +1,47 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+table {
+  width: 100%;
+  background-color: #ffffff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden; /* Hidetable cell borders on hover */
+  transition: box-shadow 0.3s;
+}
+
+table th,
+table td {
+  padding: 12px;
+  border: none; /* Remove default cell borders */
+}
+
+table th {
+  background-color: #f6f6f6;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+table tr:hover {
+  background-color: #f0f0f0;
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15); /* Add shadow on hover */
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
