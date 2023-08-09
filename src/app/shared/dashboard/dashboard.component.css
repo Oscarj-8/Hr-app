@@ -1,0 +1,55 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&family=Quicksand:wght@500&family=Roboto:wght@500&display=swap");
+
+.dashboard {
+  background-color: #004f70;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  gap: 4em;
+  padding: 1em 2.5em;
+}
+
+.logo {
+  width: 6em;
+  height: 4em;
+}
+
+nav {
+  display: grid;
+  gap: 1em;
+  justify-content: center;
+}
+
+nav img {
+  width: 1.5em;
+}
+
+nav a {
+  text-decoration: none;
+  color: #fff;
+  font-family: "Roboto", sans-serif;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  position: relative;
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -0.5em;
+  transform: translateX(-50%) scaleX(0);
+  transform-origin: center;
+  width: 0;
+  height: 3px;
+  border-radius: 15%;
+  background-color: white;
+  transition: width 0.5s ease;
+}
+
+nav a:hover::after,
+nav a:focus::after {
+  width: 100%;
+  transform: translateX(-50%) scaleX(1);
+}

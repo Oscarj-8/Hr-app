@@ -1,4 +1,5 @@
 <div class="employee-root">
+  <app-dashboard></app-dashboard>
   <div class="employee-section">
     <div class="employee-top"></div>
     <div class="employee-main">
@@ -8,10 +9,6 @@
           (click)="openEmployeeForm()"
         ></app-add-employee-button>
       </div>
-      <app-employee-form
-        *ngIf="showEmployeeForm"
-        [showEmployeeForm]="showEmployeeForm"
-      ></app-employee-form>
       <table class="employee-table">
         <thead>
           <tr>
@@ -92,3 +89,8 @@
     </button>
   </form>
 </div>
+
+<app-employee-form
+  *ngIf="showEmployeeForm"
+  [showEmployeeForm]="showEmployeeForm"
+></app-employee-form>

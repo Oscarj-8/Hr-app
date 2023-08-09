@@ -7,6 +7,7 @@ import { FormsModule } from '@angular/forms';
 import { InMemoryDataService } from './in-memory-data.service';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -19,6 +20,8 @@ import { CommonModule } from '@angular/common';
 import { AddEmployeeButtonComponent } from './components/add-employee-button/add-employee-button.component';
 
 import { DashboardComponent } from './shared/dashboard/dashboard.component';
+import { AddCandidateButtonComponent } from './components/add-candidate-button/add-candidate-button.component';
+import { CandidateFormComponent } from './components/candidate-form/candidate-form.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +33,8 @@ import { DashboardComponent } from './shared/dashboard/dashboard.component';
     EmployeeFormComponent,
     AddEmployeeButtonComponent,
     DashboardComponent,
+    AddCandidateButtonComponent,
+    CandidateFormComponent,
   ],
   imports: [
     CommonModule,
@@ -41,6 +46,7 @@ import { DashboardComponent } from './shared/dashboard/dashboard.component';
     HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, { delay: 500 }),
     MatButtonModule,
     MatIconModule,
+    FontAwesomeModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

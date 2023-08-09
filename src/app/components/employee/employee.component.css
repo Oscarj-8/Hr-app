@@ -12,12 +12,6 @@ html {
   height: 100vh;
 }
 
-.dashbaord {
-  flex: 0 0 8%;
-  background-color: rgb(93 24 220);
-  padding: 20px;
-}
-
 /* Styling for the employee section */
 .employee-section {
   flex: 1;
@@ -37,6 +31,9 @@ html {
 
 .employee-main {
   padding: 3em;
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
 }
 
 h2 {
@@ -135,6 +132,7 @@ h2 {
   .dashbaord {
     width: 100%;
   }
+
   .employee-table th {
     font-size: 14px;
   }

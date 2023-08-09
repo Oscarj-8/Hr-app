@@ -1,0 +1,26 @@
+.candidate-root {
+  display: flex;
+}
+
+.candidate-section {
+  flex: 1;
+  font-family: "Montserrat", sans-serif;
+}
+
+.candidate-top {
+  height: 5%;
+  box-shadow: 6px 6px 12px #d5d5d5;
+}
+
+.candidate-main {
+  padding: 3em;
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+}
+
+.candidate-h2-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
