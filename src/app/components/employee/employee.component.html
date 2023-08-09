@@ -3,7 +3,15 @@
   <div class="employee-section">
     <div class="employee-top"></div>
     <div class="employee-main">
-      <h2>Employee List</h2>
+      <div class="employee-h2-btn">
+        <h2>Employee List</h2>
+        <div>
+          <app-custom-button (click)="openEmployeeForm()"
+            >Add Employee</app-custom-button
+          >
+          <app-employee-form *ngIf="showEmployeeForm"></app-employee-form>
+        </div>
+      </div>
       <table class="employee-table">
         <thead>
           <tr>

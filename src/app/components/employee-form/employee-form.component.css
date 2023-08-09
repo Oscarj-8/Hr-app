@@ -1,0 +1,12 @@
+.employee-add {
+  width: 30em;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 1em;
+  border-radius: 8px;
+  background: white;
+  box-shadow: 7px 7px 14px #a2a2a2, -7px -7px 14px #ffffff;
+  z-index: 1000;
+}

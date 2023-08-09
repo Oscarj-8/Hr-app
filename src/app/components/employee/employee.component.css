@@ -14,7 +14,7 @@ html {
 
 .dashbaord {
   flex: 0 0 8%;
-  background-color: #122a46;
+  background-color: rgb(93 24 220);
   padding: 20px;
 }
 
@@ -29,6 +29,12 @@ html {
   box-shadow: 6px 6px 12px #d5d5d5;
 }
 
+.employee-h2-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .employee-main {
   padding: 3em;
 }
@@ -36,7 +42,7 @@ html {
 h2 {
   font-family: "Quicksand", sans-serif;
   font-weight: 500;
-  font-size: 1, 2em;
+  font-size: 1.7em;
 }
 
 /* Fancy table styling */

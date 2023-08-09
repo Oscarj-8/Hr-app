@@ -1,1 +1,42 @@
-<p>employee-form works!</p>
+<div class="employee-add">
+  <form (submit)="addEmployee()">
+    <label for="name">Name:</label>
+    <input
+      type="text"
+      id="name"
+      [(ngModel)]="newEmployee.name"
+      name="name"
+      required
+    />
+
+    <label for="email">Email:</label>
+    <input
+      type="email"
+      id="email"
+      [(ngModel)]="newEmployee.email"
+      name="email"
+      required
+    />
+
+    <label for="phone">Phone:</label>
+    <input
+      type="tel"
+      id="phone"
+      [(ngModel)]="newEmployee.phone"
+      name="phone"
+      required
+    />
+
+    <label for="department">Department:</label>
+    <input
+      type="text"
+      id="department"
+      [(ngModel)]="newEmployee.department"
+      name="department"
+      required
+    />
+
+    <button type="submit">Add Employee</button>
+    <button type="button" (click)="cancelAdd()">Cancel</button>
+  </form>
+</div>
