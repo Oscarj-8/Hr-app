@@ -1,47 +1,57 @@
-<div>
-  <h2>Employee List</h2>
-  <table>
-    <thead>
-      <tr>
-        <th>ID</th>
-        <th>Name</th>
-        <th>Email</th>
-        <th>Phone</th>
-        <th>Department</th>
-        <th>Actions</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let employee of employees">
-        <td>{{ employee.id }}</td>
-        <td>{{ employee.name }}</td>
-        <td>{{ employee.email }}</td>
-        <td>{{ employee.phone }}</td>
-        <td>{{ employee.department }}</td>
-        <td>
-          <button
-            mat-icon-button
-            color="primary"
-            (click)="selectEmployee(employee)"
-          >
-            <mat-icon>edit</mat-icon>
-          </button>
-          <button
-            mat-icon-button
-            color="warn"
-            (click)="deleteEmployee(employee.id)"
-          >
-            <mat-icon>delete</mat-icon>
-          </button>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+<div class="employee-root">
+  <div class="dashbaord"></div>
+  <div class="employee-section">
+    <div class="employee-top"></div>
+    <div class="employee-main">
+      <h2>Employee List</h2>
+      <table class="employee-table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Department</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let employee of employees">
+            <td>{{ employee.id }}</td>
+            <td>{{ employee.name }}</td>
+            <td>{{ employee.email }}</td>
+            <td>{{ employee.phone }}</td>
+            <td>{{ employee.department }}</td>
+            <td>
+              <button
+                mat-icon-button
+                color="primary"
+                (click)="selectEmployee(employee)"
+              >
+                <mat-icon>edit</mat-icon>
+              </button>
+              <button
+                mat-icon-button
+                color="warn"
+                (click)="deleteEmployee(employee.id)"
+              >
+                <mat-icon>delete</mat-icon>
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
 </div>
 
-<div *ngIf="selectedEmployee">
-  <h2>{{ selectedEmployee.id ? "Edit" : "Add" }} Employee</h2>
-  <form (submit)="saveEmployee(selectedEmployee)">
+<div *ngIf="selectedEmployee" class="employee-edit">
+  <div class="employee-edit-top">
+    <h2>{{ selectedEmployee.id ? "Edit" : "Add" }} Employee</h2>
+    <button class="close-button" (click)="clearSelection()">&#x2715;</button>
+  </div>
+
+  <form (submit)="saveEmployee(selectedEmployee)" class="edit-form">
     <label for="name">Name:</label>
     <input
       type="text"
@@ -66,7 +76,11 @@
       name="department"
     />
 
-    <button type="submit">{{ selectedEmployee.id ? "Update" : "Add" }}</button>
-    <button type="button" (click)="clearSelection()">Cancel</button>
+    <button class="up-cn" type="submit">
+      {{ selectedEmployee.id ? "Update" : "Add" }}
+    </button>
+    <button class="up-cn" type="button" (click)="clearSelection()">
+      Cancel
+    </button>
   </form>
 </div>
