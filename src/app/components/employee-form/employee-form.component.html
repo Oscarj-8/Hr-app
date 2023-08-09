@@ -40,6 +40,15 @@
       required
     />
 
+    <label for="salary">Salary:</label>
+    <input
+      type="text"
+      id="salary"
+      [(ngModel)]="newEmployee.salary"
+      name="salary"
+      required
+    />
+
     <button class="up-cn" type="submit">Add Employee</button>
     <button class="up-cn" type="button" (click)="cancelForm()">Cancel</button>
   </form>

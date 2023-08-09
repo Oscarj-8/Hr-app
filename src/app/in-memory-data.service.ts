@@ -12,6 +12,7 @@ export class InMemoryDataService implements InMemoryDbService {
         name: 'John Doe',
         email: 'john.doe@example.com',
         phone: '096634122',
+        department: 'CS',
         experience: 5,
         interviewStatus: 'pending',
       },
@@ -20,6 +21,7 @@ export class InMemoryDataService implements InMemoryDbService {
         name: 'Jane Smith',
         email: 'jane.smith@example.com',
         phone: '090637600',
+        department: 'SW',
         experience: 3,
         interviewStatus: 'pending',
       },
@@ -28,10 +30,10 @@ export class InMemoryDataService implements InMemoryDbService {
         name: 'Smith Jane ',
         email: 'smith.jane@example.com',
         phone: '0932362289',
+        department: 'CS',
         experience: 4,
         interviewStatus: 'pending',
       },
-      // Add more candidate objects as needed
     ];
 
     const employees: Employee[] = [
@@ -41,6 +43,7 @@ export class InMemoryDataService implements InMemoryDbService {
         email: 'john.smith@example.com',
         phone: '0912346778',
         department: 'IT',
+        salary: 11000,
       },
       {
         id: 2,
@@ -48,6 +51,7 @@ export class InMemoryDataService implements InMemoryDbService {
         email: 'jane.doe@example.com',
         phone: '0963346523',
         department: 'HR',
+        salary: 13000,
       },
       {
         id: 3,
@@ -55,6 +59,7 @@ export class InMemoryDataService implements InMemoryDbService {
         email: 'arnold.jamese@example.com',
         phone: '0932456790',
         department: 'HR',
+        salary: 14000,
       },
       {
         id: 4,
@@ -62,8 +67,8 @@ export class InMemoryDataService implements InMemoryDbService {
         email: 'arnold.jamese@example.com',
         phone: '0932456790',
         department: 'HR',
+        salary: 15000,
       },
-      // Add more employee objects as needed
     ];
 
     const department: Department[] = [

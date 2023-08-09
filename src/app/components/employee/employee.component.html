@@ -17,6 +17,7 @@
             <th>Email</th>
             <th>Phone</th>
             <th>Department</th>
+            <th>Salary</th>
             <th>Actions</th>
           </tr>
         </thead>
@@ -27,6 +28,7 @@
             <td>{{ employee.email }}</td>
             <td>{{ employee.phone }}</td>
             <td>{{ employee.department }}</td>
+            <td>{{ employee.salary }}</td>
             <td>
               <button
                 mat-icon-button
@@ -73,6 +75,14 @@
       name="email"
     />
 
+    <label for="department">Phone:</label>
+    <input
+      type="text"
+      id="phone"
+      [(ngModel)]="selectedEmployee.phone"
+      name="phone"
+    />
+
     <label for="department">Department:</label>
     <input
       type="text"
@@ -81,6 +91,13 @@
       name="department"
     />
 
+    <label for="salary">Salary:</label>
+    <input
+      type="text"
+      id="salary"
+      [(ngModel)]="selectedEmployee.salary"
+      name="salary"
+    />
     <button class="up-cn" type="submit">
       {{ selectedEmployee.id ? "Update" : "Add" }}
     </button>

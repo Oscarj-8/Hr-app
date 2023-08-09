@@ -17,6 +17,7 @@ export class EmployeeFormComponent implements OnInit {
     email: '',
     phone: '',
     department: '',
+    salary: 0,
   };
 
   constructor(private employeeService: EmployeeService) {}
@@ -31,6 +32,7 @@ export class EmployeeFormComponent implements OnInit {
       email: '',
       phone: '',
       department: '',
+      salary: 0,
     };
   }
 
