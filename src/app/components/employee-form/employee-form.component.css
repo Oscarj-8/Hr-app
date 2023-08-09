@@ -10,3 +10,70 @@
   box-shadow: 7px 7px 14px #a2a2a2, -7px -7px 14px #ffffff;
   z-index: 1000;
 }
+
+.employee-add form {
+  display: grid;
+  gap: 0.5em;
+}
+
+.employee-add label {
+  font-weight: bold;
+}
+
+.employee-add input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.up-cn {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.employee-add button[type="submit"] {
+  background-color: #4caf50;
+}
+
+.employee-add button[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+.employee-add button[type="button"] {
+  background-color: #f44336;
+}
+
+.employee-add button[type="button"]:hover {
+  background-color: #d32f2f;
+}
+
+.employee-add-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.close-button {
+  width: 1.3em;
+  height: 1.3em;
+  background: none;
+  border: none;
+  display: flex;
+  font-size: 1.6em;
+  align-items: center;
+  justify-content: center;
+  color: #000;
+  padding: 1em;
+  border-radius: 25%;
+  transition: background-color 0.3s;
+  cursor: pointer;
+}
+
+.close-button:hover {
+  background-color: #f44336;
+  color: #ffffff;
+}

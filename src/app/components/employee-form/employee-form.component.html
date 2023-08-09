@@ -1,5 +1,9 @@
 <div class="employee-add">
   <form (submit)="addEmployee()">
+    <div class="employee-add-top">
+      <h2>Add Employee</h2>
+      <button class="close-button">&#x2715;</button>
+    </div>
     <label for="name">Name:</label>
     <input
       type="text"
@@ -36,7 +40,7 @@
       required
     />
 
-    <button type="submit">Add Employee</button>
-    <button type="button" (click)="cancelForm()">Cancel</button>
+    <button class="up-cn" type="submit">Add Employee</button>
+    <button class="up-cn" type="button" (click)="cancelForm()">Cancel</button>
   </form>
 </div>
