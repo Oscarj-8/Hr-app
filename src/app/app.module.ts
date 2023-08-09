@@ -14,8 +14,9 @@ import { CandidateComponent } from './components/candidate/candidate.component';
 import { EmployeeComponent } from './components/employee/employee.component';
 import { DepartmentComponent } from './components/department/department.component';
 import { SalaryComponent } from './components/salary/salary.component';
-import { CustomButtonComponent } from './components/custom-button/custom-button.component';
 import { EmployeeFormComponent } from './components/employee-form/employee-form.component';
+import { CommonModule } from '@angular/common';
+import { AddEmployeeButtonComponent } from './components/add-employee-button/add-employee-button.component';
 
 @NgModule({
   declarations: [
@@ -24,10 +25,11 @@ import { EmployeeFormComponent } from './components/employee-form/employee-form.
     EmployeeComponent,
     DepartmentComponent,
     SalaryComponent,
-    CustomButtonComponent,
     EmployeeFormComponent,
+    AddEmployeeButtonComponent,
   ],
   imports: [
+    CommonModule,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,

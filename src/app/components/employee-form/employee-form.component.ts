@@ -1,5 +1,5 @@
 // employee-form.component.ts
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { EmployeeService } from 'src/app/services/employee.service';
 import { Employee } from 'src/app/models/employee';
 
@@ -9,6 +9,8 @@ import { Employee } from 'src/app/models/employee';
   styleUrls: ['./employee-form.component.css'],
 })
 export class EmployeeFormComponent implements OnInit {
+  @Input() showEmployeeForm: boolean = false;
+
   newEmployee: Employee = {
     id: 0,
     name: '',
@@ -20,6 +22,7 @@ export class EmployeeFormComponent implements OnInit {
   constructor(private employeeService: EmployeeService) {}
 
   ngOnInit(): void {}
+
   addEmployee() {
     this.employeeService.addEmployee(this.newEmployee);
     this.newEmployee = {
@@ -31,13 +34,9 @@ export class EmployeeFormComponent implements OnInit {
     };
   }
 
-  cancelAdd() {
-    this.newEmployee = {
-      id: 0,
-      name: '',
-      email: '',
-      phone: '',
-      department: '',
-    };
+  cancelForm(): void {
+    console.log('clicked');
+
+    this.showEmployeeForm = !this.showEmployeeForm;
   }
 }

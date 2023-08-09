@@ -5,13 +5,14 @@
     <div class="employee-main">
       <div class="employee-h2-btn">
         <h2>Employee List</h2>
-        <div>
-          <app-custom-button (click)="openEmployeeForm()"
-            >Add Employee</app-custom-button
-          >
-          <app-employee-form *ngIf="showEmployeeForm"></app-employee-form>
-        </div>
+        <app-add-employee-button
+          (click)="openEmployeeForm()"
+        ></app-add-employee-button>
       </div>
+      <app-employee-form
+        *ngIf="showEmployeeForm"
+        [showEmployeeForm]="showEmployeeForm"
+      ></app-employee-form>
       <table class="employee-table">
         <thead>
           <tr>
