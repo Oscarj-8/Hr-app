@@ -15,6 +15,7 @@ import { EmployeeComponent } from './components/employee/employee.component';
 import { DepartmentComponent } from './components/department/department.component';
 import { SalaryComponent } from './components/salary/salary.component';
 import { CustomButtonComponent } from './components/custom-button/custom-button.component';
+import { EmployeeFormComponent } from './components/employee-form/employee-form.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { CustomButtonComponent } from './components/custom-button/custom-button.
     DepartmentComponent,
     SalaryComponent,
     CustomButtonComponent,
+    EmployeeFormComponent,
   ],
   imports: [
     BrowserModule,
