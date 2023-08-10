@@ -15,11 +15,6 @@ export class EmployeeService {
     return this.http.get<Employee[]>(this.employeeUrl);
   }
 
-  getEmployee(id: number): Observable<Employee> {
-    const url = `${this.employeeUrl}/${id}`;
-    return this.http.get<Employee>(url);
-  }
-
   addEmployee(employee: Employee): Observable<Employee> {
     return this.http.post<Employee>(this.employeeUrl, employee);
   }
@@ -29,8 +24,8 @@ export class EmployeeService {
     return this.http.put<Employee>(url, employee);
   }
 
-  deleteEmployee(id: number): Observable<Employee> {
-    const url = `${this.employeeUrl}/${id}`;
-    return this.http.delete<Employee>(url);
+  deleteEmployee(employee: Employee): Observable<any> {
+    const url = `${this.employeeUrl}/${employee.id}`;
+    return this.http.delete(url);
   }
 }

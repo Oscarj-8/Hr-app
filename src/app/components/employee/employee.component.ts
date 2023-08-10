@@ -65,11 +65,15 @@ export class EmployeeComponent implements OnInit {
     }
   }
 
-  deleteEmployee(id: number): void {
-    this.employeeService.deleteEmployee(id).subscribe(() => {
-      this.employees = this.employees.filter((e) => e.id !== id);
-      this.clearSelection();
-    });
+  deleteEmployee(employee: Employee) {
+    console.log(employee);
+    this.employeeService
+      .deleteEmployee(employee)
+      .subscribe(
+        () =>
+          (this.employees = this.employees.filter((e) => e.id !== employee.id))
+      );
+    this.clearSelection();
   }
 
   openEmployeeForm() {
