@@ -1,7 +1,8 @@
 // employee-form.component.ts
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 import { EmployeeService } from 'src/app/services/employee.service';
 import { Employee } from 'src/app/models/employee';
+import { outputAst } from '@angular/compiler';
 
 @Component({
   selector: 'app-employee-form',
@@ -10,6 +11,7 @@ import { Employee } from 'src/app/models/employee';
 })
 export class EmployeeFormComponent implements OnInit {
   @Input() showEmployeeForm: boolean = false;
+  @Output() cancel: EventEmitter<Employee> = new EventEmitter();
 
   newEmployee: Employee = {
     id: 0,
@@ -37,8 +39,6 @@ export class EmployeeFormComponent implements OnInit {
   }
 
   cancelForm(): void {
-    console.log('clicked');
-
-    this.showEmployeeForm = !this.showEmployeeForm;
+    this.cancel.emit();
   }
 }

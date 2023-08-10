@@ -7,7 +7,7 @@ import { Employee } from '../models/employee';
   providedIn: 'root',
 })
 export class EmployeeService {
-  private employeeUrl = 'api/employees'; // Adjust the URL to match your in-memory API
+  private employeeUrl = 'api/employees';
 
   constructor(private http: HttpClient) {}
 

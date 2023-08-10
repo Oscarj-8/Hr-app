@@ -13,4 +13,18 @@ export class CandidateService {
   getCandidates(): Observable<Candidate[]> {
     return this.http.get<Candidate[]>(this.candidateUrl);
   }
+
+  addCandidate(candidate: Candidate): Observable<Candidate> {
+    return this.http.post<Candidate>(this.candidateUrl, candidate);
+  }
+
+  deleteCandidate(id: number): Observable<Candidate> {
+    const url = `${this.candidateUrl}/${id}`;
+    return this.http.delete<Candidate>(url);
+  }
+
+  updateCandidate(candidate: Candidate): Observable<Candidate> {
+    const url = `${this.candidateUrl}/${candidate.id}`;
+    return this.http.put<Candidate>(url, candidate);
+  }
 }

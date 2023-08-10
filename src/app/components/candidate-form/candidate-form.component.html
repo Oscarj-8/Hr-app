@@ -1,8 +1,8 @@
-<div class="employee-add">
+<div class="candidate-add">
   <form>
-    <div class="employee-add-top">
-      <h2>Add Employee</h2>
-      <button class="close-button">&#x2715;</button>
+    <div class="candidate-add-top">
+      <h2>Add Candidate</h2>
+      <button class="close-button" (click)="cancelForm()">&#x2715;</button>
     </div>
     <label for="name">Name:</label>
     <input type="text" id="name" name="name" required />
@@ -16,7 +16,13 @@
     <label for="department">Department:</label>
     <input type="text" id="department" name="department" required />
 
-    <button class="up-cn" type="submit">Add Employee</button>
-    <button class="up-cn" type="button">Cancel</button>
+    <label for="experience">Experience:</label>
+    <input type="text" id="experience" name="experience" required />
+
+    <label for="interviewStatus">Interview Status:</label>
+    <input type="text" id="interviewStatus" name="interviewStatus" required />
+
+    <button class="up-cn" type="submit">Add</button>
+    <button class="up-cn" type="button" (click)="cancelForm()">Cancel</button>
   </form>
 </div>

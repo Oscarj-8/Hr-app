@@ -5,7 +5,9 @@
     <div class="candidate-main">
       <div class="candidate-h2-btn">
         <h2>Candidates List</h2>
-        <app-add-candidate-button></app-add-candidate-button>
+        <app-add-candidate-button
+          (click)="openCandidateForm()"
+        ></app-add-candidate-button>
       </div>
       <table>
         <thead>
@@ -17,6 +19,7 @@
             <th>Department</th>
             <th>Experience</th>
             <th>Interview Status</th>
+            <th>Actions</th>
           </tr>
         </thead>
         <tbody>
@@ -28,9 +31,92 @@
             <td>{{ candidate.department }}</td>
             <td>{{ candidate.experience }}</td>
             <td>{{ candidate.interviewStatus }}</td>
+            <td>
+              <button
+                mat-icon-button
+                color="primary"
+                (click)="selectCandidate(candidate)"
+              >
+                <mat-icon>edit</mat-icon>
+              </button>
+              <button
+                mat-icon-button
+                color="warn"
+                (click)="deleteCandidate(candidate.id)"
+              >
+                <mat-icon>delete</mat-icon>
+              </button>
+            </td>
           </tr>
         </tbody>
       </table>
     </div>
   </div>
 </div>
+
+<div *ngIf="selectedCandidate" class="candidate-edit">
+  <div class="candidate-edit-top">
+    <h2>{{ selectedCandidate.id ? "Edit" : "Add" }} Candidate</h2>
+    <button class="close-button" (click)="clearSelection()">&#x2715;</button>
+  </div>
+  <form (submit)="saveCandidate(selectedCandidate)" class="edit-form">
+    <label for="name">Name:</label>
+    <input
+      type="text"
+      id="name"
+      [(ngModel)]="selectedCandidate.name"
+      name="name"
+    />
+
+    <label for="email">Email:</label>
+    <input
+      type="email"
+      id="email"
+      [(ngModel)]="selectedCandidate.email"
+      name="email"
+    />
+
+    <label for="department">Phone:</label>
+    <input
+      type="text"
+      id="phone"
+      [(ngModel)]="selectedCandidate.phone"
+      name="phone"
+    />
+
+    <label for="department">Department:</label>
+    <input
+      type="text"
+      id="department"
+      [(ngModel)]="selectedCandidate.department"
+      name="department"
+    />
+
+    <label for="experience">Experience:</label>
+    <input
+      type="text"
+      id="experience"
+      [(ngModel)]="selectedCandidate.experience"
+      name="experience"
+    />
+
+    <label for="interviewStatus">Interview Status:</label>
+    <input
+      type="text"
+      id="interviewStatus"
+      [(ngModel)]="selectedCandidate.interviewStatus"
+      name="interviewStatus"
+    />
+    <button class="up-cn" type="submit">
+      {{ selectedCandidate.id ? "Update" : "Add" }}
+    </button>
+    <button class="up-cn" type="button" (click)="clearSelection()">
+      Cancel
+    </button>
+  </form>
+</div>
+
+<app-candidate-form
+  *ngIf="showCandidateForm"
+  (cancel)="cancelCandidateForm()"
+></app-candidate-form>
