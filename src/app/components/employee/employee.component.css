@@ -6,13 +6,11 @@ html {
   font-family: "Roboto", sans-serif;
 }
 
-/* Styling for the root container */
 .employee-root {
   display: flex;
   height: 100vh;
 }
 
-/* Styling for the employee section */
 .employee-section {
   flex: 1;
   font-family: "Montserrat", sans-serif;

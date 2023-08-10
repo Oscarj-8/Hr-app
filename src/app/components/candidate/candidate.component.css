@@ -19,6 +19,12 @@
   gap: 2em;
 }
 
+h2 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 1.7em;
+}
+
 .candidate-h2-btn {
   display: flex;
   align-items: center;
@@ -38,7 +44,6 @@
   z-index: 1000;
 }
 
-/* Styling for the form inside candidate-edit */
 .candidate-edit form {
   display: grid;
   gap: 0.5em;

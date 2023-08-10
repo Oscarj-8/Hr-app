@@ -2,7 +2,6 @@
 import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 import { EmployeeService } from 'src/app/services/employee.service';
 import { Employee } from 'src/app/models/employee';
-import { outputAst } from '@angular/compiler';
 
 @Component({
   selector: 'app-employee-form',
