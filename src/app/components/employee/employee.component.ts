@@ -81,6 +81,6 @@ export class EmployeeComponent implements OnInit {
   }
 
   cancelEmployeeForm() {
-    this.showEmployeeForm = false;
+    this.showEmployeeForm = !this.showEmployeeForm;
   }
 }
