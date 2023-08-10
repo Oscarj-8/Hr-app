@@ -28,10 +28,6 @@ export class EmployeeComponent implements OnInit {
     this.selectedEmployee = { ...employee };
   }
 
-  clearSelection(): void {
-    this.selectedEmployee = null;
-  }
-
   saveEmployee(employee: Employee): void {
     if (employee.id) {
       this.employeeService.updateEmployee(employee).subscribe(
@@ -76,11 +72,24 @@ export class EmployeeComponent implements OnInit {
     this.clearSelection();
   }
 
+  addEmployee(employee: Employee) {
+    console.log(employee);
+    this.employeeService
+      .addEmployee(employee)
+      .subscribe((employee) => this.employees.push(employee));
+
+    this.showEmployeeForm = !this.showEmployeeForm;
+  }
+
   openEmployeeForm() {
     this.showEmployeeForm = !this.showEmployeeForm;
   }
 
   cancelEmployeeForm() {
     this.showEmployeeForm = !this.showEmployeeForm;
+  }
+
+  clearSelection(): void {
+    this.selectedEmployee = null;
   }
 }

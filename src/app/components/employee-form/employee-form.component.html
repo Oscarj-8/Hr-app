@@ -1,41 +1,27 @@
 <div class="employee-add">
-  <form (submit)="addEmployee()">
+  <form (ngSubmit)="addEmployee()">
     <div class="employee-add-top">
       <h2>Add Employee</h2>
       <button class="close-button" (click)="cancelForm()">&#x2715;</button>
     </div>
+
+    <label for="id">ID:</label>
+    <input type="number" id="id" [(ngModel)]="id" name="id" required />
+
     <label for="name">Name:</label>
-    <input
-      type="text"
-      id="name"
-      [(ngModel)]="newEmployee.name"
-      name="name"
-      required
-    />
+    <input type="text" id="name" [(ngModel)]="name" name="name" required />
 
     <label for="email">Email:</label>
-    <input
-      type="email"
-      id="email"
-      [(ngModel)]="newEmployee.email"
-      name="email"
-      required
-    />
+    <input type="email" id="email" [(ngModel)]="email" name="email" required />
 
     <label for="phone">Phone:</label>
-    <input
-      type="tel"
-      id="phone"
-      [(ngModel)]="newEmployee.phone"
-      name="phone"
-      required
-    />
+    <input type="tel" id="phone" [(ngModel)]="phone" name="phone" required />
 
     <label for="department">Department:</label>
     <input
       type="text"
       id="department"
-      [(ngModel)]="newEmployee.department"
+      [(ngModel)]="department"
       name="department"
       required
     />
@@ -44,7 +30,7 @@
     <input
       type="text"
       id="salary"
-      [(ngModel)]="newEmployee.salary"
+      [(ngModel)]="salary"
       name="salary"
       required
     />

@@ -110,4 +110,5 @@
 <app-employee-form
   *ngIf="showEmployeeForm"
   (cancel)="cancelEmployeeForm()"
+  (onAddEmployee)="addEmployee($event)"
 ></app-employee-form>
