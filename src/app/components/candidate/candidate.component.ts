@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Candidate } from 'src/app/models/candidate';
 import { CandidateService } from 'src/app/services/candidate.service';
+import { Subscription } from 'rxjs';
 @Component({
   selector: 'app-candidate',
   templateUrl: './candidate.component.html',
@@ -27,36 +28,18 @@ export class CandidateComponent implements OnInit {
     this.selectedCandidate = { ...candidate };
   }
 
-  saveCandidate(employee: Candidate): void {
-    if (employee.id) {
-      this.candidateService.updateCandidate(employee).subscribe(
-        (updatedCandidate) => {
-          if (updatedCandidate) {
-            const index = this.candidates.findIndex(
-              (e) => e.id === updatedCandidate.id
-            );
-            if (index !== -1) {
-              this.candidates[index] = updatedCandidate;
-            }
-          }
+  updateCandidate(updatedCandidate: Candidate): void {
+    console.log('Updated candidate object:', updatedCandidate);
+
+    if (updatedCandidate) {
+      const subscription: Subscription = this.candidateService
+        .updateCandidate(updatedCandidate)
+        .subscribe(() => {
+          this.getCandidates();
           this.clearSelection();
-        },
-        (error) => {
-          console.error('Error updating employee:', error);
-          this.clearSelection();
-        }
-      );
+        });
     } else {
-      this.candidateService.addCandidate(employee).subscribe(
-        (newCandidate) => {
-          this.candidates.push(newCandidate);
-          this.clearSelection();
-        },
-        (error) => {
-          console.error('Error adding employee:', error);
-          this.clearSelection();
-        }
-      );
+      console.warn('No candidate selected for update');
     }
   }
 

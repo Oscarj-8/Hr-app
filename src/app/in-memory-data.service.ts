@@ -47,6 +47,7 @@ export class InMemoryDataService implements InMemoryDbService {
         email: 'john.smith@example.com',
         phone: +251912346778,
         department: 'IT',
+        company: 'Arial Plc',
         salary: 11000,
       },
       {
@@ -55,6 +56,7 @@ export class InMemoryDataService implements InMemoryDbService {
         email: 'jane.doe@example.com',
         phone: +251963346523,
         department: 'HR',
+        company: 'Microverse ',
         salary: 13000,
       },
       {
@@ -63,6 +65,7 @@ export class InMemoryDataService implements InMemoryDbService {
         email: 'arnold.jamese@example.com',
         phone: +25932456790,
         department: 'HR',
+        company: 'ALX',
         salary: 14000,
       },
       {
@@ -71,6 +74,7 @@ export class InMemoryDataService implements InMemoryDbService {
         email: 'arnold.jamese@example.com',
         phone: +251932456790,
         department: 'HR',
+        company: 'Arial Plc',
         salary: 15000,
       },
     ];

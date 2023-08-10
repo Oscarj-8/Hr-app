@@ -2,6 +2,12 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Candidate } from '../models/candidate';
+
+const httpOptions = {
+  headers: new HttpHeaders({
+    'Content-Type': 'application/json',
+  }),
+};
 @Injectable({
   providedIn: 'root',
 })
@@ -15,11 +21,6 @@ export class CandidateService {
   }
 
   addCandidate(candidate: Candidate): Observable<Candidate> {
-    const httpOptions = {
-      headers: new HttpHeaders({
-        'Content-Type': 'application/json',
-      }),
-    };
     return this.http.post<Candidate>(this.candidateUrl, candidate, httpOptions);
   }
 
@@ -30,6 +31,6 @@ export class CandidateService {
 
   updateCandidate(candidate: Candidate): Observable<Candidate> {
     const url = `${this.candidateUrl}/${candidate.id}`;
-    return this.http.put<Candidate>(url, candidate);
+    return this.http.put<Candidate>(url, candidate, httpOptions);
   }
 }

@@ -17,6 +17,7 @@
             <th>Email</th>
             <th>Phone</th>
             <th>Department</th>
+            <th>Company</th>
             <th>Salary</th>
             <th>Actions</th>
           </tr>
@@ -28,6 +29,7 @@
             <td>{{ employee.email }}</td>
             <td>{{ employee.phone }}</td>
             <td>{{ employee.department }}</td>
+            <td>{{ employee.company }}</td>
             <td>{{ employee.salary }}</td>
             <td>
               <button
@@ -89,6 +91,14 @@
       id="department"
       [(ngModel)]="selectedEmployee.department"
       name="department"
+    />
+
+    <label for="company">Company:</label>
+    <input
+      type="text"
+      id="company"
+      [(ngModel)]="selectedEmployee.company"
+      name="company"
     />
 
     <label for="salary">Salary:</label>

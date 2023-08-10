@@ -17,31 +17,14 @@ export class EmployeeFormComponent implements OnInit {
   email: string = '';
   phone: number = +251;
   department: string = '';
+  company: string = '';
   salary: number = 0;
-
-  // newEmployee: Employee = {
-  //   id: 0,
-  //   name: '',
-  //   email: '',
-  //   phone: '',
-  //   department: '',
-  //   salary: 0,
-  // };
 
   constructor(private employeeService: EmployeeService) {}
 
   ngOnInit(): void {}
 
   addEmployee() {
-    // this.employeeService.addEmployee(this.newEmployee);
-    // this.newEmployee = {
-    //   id: 0,
-    //   name: '',
-    //   email: '',
-    //   phone: '',
-    //   department: '',
-    //   salary: 0,
-    // };
     if (!this.name) {
       alert('Please enter a name');
       return;
@@ -53,6 +36,7 @@ export class EmployeeFormComponent implements OnInit {
       email: this.email,
       phone: this.phone,
       department: this.department,
+      company: this.company,
       salary: this.salary,
     };
 
@@ -63,6 +47,7 @@ export class EmployeeFormComponent implements OnInit {
     this.email = '';
     this.phone = +251;
     this.department = '';
+    this.company = '';
     this.salary = 0;
   }
 

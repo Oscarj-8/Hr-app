@@ -59,7 +59,7 @@
     <h2>{{ selectedCandidate.id ? "Edit" : "Add" }} Candidate</h2>
     <button class="close-button" (click)="clearSelection()">&#x2715;</button>
   </div>
-  <form (submit)="saveCandidate(selectedCandidate)" class="edit-form">
+  <form (ngSubmit)="updateCandidate(selectedCandidate)" class="edit-form">
     <label for="name">Name:</label>
     <input
       type="text"
