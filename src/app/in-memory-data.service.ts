@@ -78,14 +78,17 @@ export class InMemoryDataService implements InMemoryDbService {
     const department: Department[] = [
       {
         id: 1,
+        employee_id: 1,
         name: 'HR',
       },
       {
         id: 2,
+        employee_id: 2,
         name: 'IT',
       },
       {
         id: 3,
+        employee_id: 3,
         name: 'Graphics Design',
       },
     ];
@@ -105,6 +108,11 @@ export class InMemoryDataService implements InMemoryDbService {
         id: 3,
         employee_id: 3,
         amount: 14000,
+      },
+      {
+        id: 4,
+        employee_id: 4,
+        amount: 11000,
       },
     ];
 
