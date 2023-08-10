@@ -58,7 +58,7 @@
     <button class="close-button" (click)="clearSelection()">&#x2715;</button>
   </div>
 
-  <form (submit)="saveEmployee(selectedEmployee)" class="edit-form">
+  <form (ngSubmit)="updateEmployee(selectedEmployee)" class="edit-form">
     <label for="name">Name:</label>
     <input
       type="text"

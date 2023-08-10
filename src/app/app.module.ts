@@ -43,7 +43,9 @@ import { CandidateFormComponent } from './components/candidate-form/candidate-fo
     HttpClientModule,
     FormsModule,
     InMemoryWebApiModule.forRoot(InMemoryDataService),
-    HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, { delay: 500 }),
+    HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, {
+      dataEncapsulation: false,
+    }),
     MatButtonModule,
     MatIconModule,
     FontAwesomeModule,

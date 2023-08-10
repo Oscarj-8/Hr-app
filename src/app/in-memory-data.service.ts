@@ -1,9 +1,13 @@
 import { InMemoryDbService } from 'angular-in-memory-web-api';
+import { Injectable } from '@angular/core';
 import { Candidate } from './models/candidate';
 import { Employee } from './models/employee';
 import { Department } from './models/department';
 import { Salary } from './models/salary';
 
+@Injectable({
+  providedIn: 'root',
+})
 export class InMemoryDataService implements InMemoryDbService {
   createDb() {
     const candidates: Candidate[] = [
@@ -86,7 +90,7 @@ export class InMemoryDataService implements InMemoryDbService {
       },
     ];
 
-    const Salary: Salary[] = [
+    const salary: Salary[] = [
       {
         id: 1,
         employee_id: 1,
@@ -104,6 +108,6 @@ export class InMemoryDataService implements InMemoryDbService {
       },
     ];
 
-    return { candidates, employees, department };
+    return { candidates, employees, department, salary };
   }
 }

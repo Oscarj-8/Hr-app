@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Employee } from '../../models/employee';
 import { EmployeeService } from '../../services/employee.service';
+import { Subscription } from 'rxjs';
+import { tap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-employee',
@@ -28,36 +30,50 @@ export class EmployeeComponent implements OnInit {
     this.selectedEmployee = { ...employee };
   }
 
-  saveEmployee(employee: Employee): void {
-    if (employee.id) {
-      this.employeeService.updateEmployee(employee).subscribe(
-        (updatedEmployee) => {
-          if (updatedEmployee) {
-            const index = this.employees.findIndex(
-              (e) => e.id === updatedEmployee.id
-            );
-            if (index !== -1) {
-              this.employees[index] = updatedEmployee;
+  // updateEmployee(updatedEmployee: Employee): void {
+  //   console.log('Updated employee object:', updatedEmployee);
+  //   this.employeeService
+  //     .updateEmployee(updatedEmployee)
+  //     .subscribe((updatedEmployee) => this.employees.push(updatedEmployee));
+  // }
+
+  updateEmployee(updatedEmployee: Employee): void {
+    console.log('Updated employee object:', updatedEmployee);
+
+    if (updatedEmployee) {
+      const subscription: Subscription = this.employeeService
+        .updateEmployee(updatedEmployee)
+        .pipe(
+          tap((updated) => {
+            console.log('Updated employee response:', updated);
+
+            if (updated) {
+              const index = this.employees.findIndex(
+                (e) => e.id === updated.id
+              );
+              if (index !== -1) {
+                this.employees[index] = updated;
+              }
             }
-          }
-          this.clearSelection();
-        },
-        (error) => {
-          console.error('Error updating employee:', error);
-          this.clearSelection();
-        }
-      );
+
+            this.clearSelection();
+          })
+        )
+        .subscribe({
+          next: (result) => {
+            console.log('Update completed:', result);
+            // Handle the result here
+          },
+          error: (error) => {
+            console.error('Error updating employee:', error);
+            // Handle error
+          },
+          complete: () => {
+            console.log('Update completed.');
+          },
+        });
     } else {
-      this.employeeService.addEmployee(employee).subscribe(
-        (newEmployee) => {
-          this.employees.push(newEmployee);
-          this.clearSelection();
-        },
-        (error) => {
-          console.error('Error adding employee:', error);
-          this.clearSelection();
-        }
-      );
+      console.warn('No employee selected for update');
     }
   }
 
