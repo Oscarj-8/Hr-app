@@ -73,7 +73,6 @@ export class EmployeeComponent implements OnInit {
   }
 
   addEmployee(employee: Employee) {
-    console.log(employee);
     this.employeeService
       .addEmployee(employee)
       .subscribe((employee) => this.employees.push(employee));

@@ -27,10 +27,6 @@ export class CandidateComponent implements OnInit {
     this.selectedCandidate = { ...candidate };
   }
 
-  clearSelection(): void {
-    this.selectedCandidate = null;
-  }
-
   saveCandidate(employee: Candidate): void {
     if (employee.id) {
       this.candidateService.updateCandidate(employee).subscribe(
@@ -71,12 +67,23 @@ export class CandidateComponent implements OnInit {
     });
   }
 
+  addCandidate(candidate: Candidate) {
+    this.candidateService
+      .addCandidate(candidate)
+      .subscribe((candidate) => this.candidates.push(candidate));
+
+    this.showCandidateForm = false;
+  }
+
   cancelCandidateForm(): void {
-    console.log('cliced');
     this.showCandidateForm = false;
   }
 
   openCandidateForm() {
     this.showCandidateForm = !this.showCandidateForm;
+  }
+
+  clearSelection(): void {
+    this.selectedCandidate = null;
   }
 }

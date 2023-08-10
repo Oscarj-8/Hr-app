@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Candidate } from '../models/candidate';
 @Injectable({
   providedIn: 'root',
@@ -15,7 +15,12 @@ export class CandidateService {
   }
 
   addCandidate(candidate: Candidate): Observable<Candidate> {
-    return this.http.post<Candidate>(this.candidateUrl, candidate);
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+      }),
+    };
+    return this.http.post<Candidate>(this.candidateUrl, candidate, httpOptions);
   }
 
   deleteCandidate(id: number): Observable<Candidate> {

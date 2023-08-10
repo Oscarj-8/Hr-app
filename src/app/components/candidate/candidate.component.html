@@ -119,4 +119,5 @@
 <app-candidate-form
   *ngIf="showCandidateForm"
   (cancel)="cancelCandidateForm()"
+  (onAddCandidate)="addCandidate($event)"
 ></app-candidate-form>
